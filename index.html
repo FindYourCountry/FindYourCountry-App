@@ -20,7 +20,7 @@
           id="search-box"
           placeholder="Search for a country..."
         />
-        <button onclick="searchCountry()">Search</button>
+        <button class="btn" onclick="searchCountry()">Search</button>
       </div>
 
       <!-- Country Information Section -->
@@ -46,9 +46,12 @@
         <div class="quiz-flag-container">
           <img id="quiz-flag" src="" alt="Guess the country" />
         </div>
+        <div class="quiz-buttons">
         <input type="text" id="guess-input" placeholder="Enter your guess..." />
-        <button onclick="checkGuess()">Submit Guess</button>
+        <button class="btn" onclick="checkGuess()">Submit Guess</button>
         <button onclick="getHint()">Hint</button>
+        <button onclick="checkGuess()">try Another Guess</button>
+      </div>
       </div>
     </div>
 
