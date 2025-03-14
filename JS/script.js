@@ -6,6 +6,7 @@ async function fetchCountryData(country) {
       }
       
       const data = await response.json();
+      console.log(data)
       updateCountryInfo(data[0]); // Update the UI with the first result
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -31,3 +32,8 @@ async function fetchCountryData(country) {
     }
   }
   
+  document.getElementById("search-box").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") { // Check if Enter key is pressed
+        searchCountry();
+    }
+});
