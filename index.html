@@ -3,7 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Find Your Country</title>
+    <link rel="stylesheet" href="CSS/style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🌍 Find Your Country</h1>
+        <p>Explore countries and test your geography knowledge!</p>
+      </header>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input
+          type="text"
+          id="search-box"
+          placeholder="Search for a country..."
+        />
+        <button class="btn" onclick="searchCountry()">Search</button>
+      </div>
+
+      <!-- Country Information Section -->
+      <div id="country-info" class="hidden">
+        <div class="flag-container">
+          <img id="country-flag" src="" alt="Country Flag" />
+        </div>
+        <div class="details">
+          <h2 id="country-name">Country Name</h2>
+          <p>Capital: <span id="capital"></span></p>
+          <p>Population: <span id="population"></span></p>
+          <p>Languages: <span id="languages"></span></p>
+          <p>Currency: <span id="currency"></span></p>
+          <a id="maps-link" href="#" target="_blank" class="view-maps"
+            >View on Maps</a
+          >
+        </div>
+      </div>
+
+      <!-- Guess the Country Game -->
+      <div class="quiz-container">
+        <h3>Guess the Country!</h3>
+        <div class="quiz-flag-container">
+          <img id="quiz-flag" src="" alt="Guess the country" />
+        </div>
+        <div class="quiz-buttons">
+        <input type="text" id="guess-input" placeholder="Enter your guess..." />
+        <button class="btn" onclick="checkGuess()">Submit Guess</button>
+        <button onclick="getHint()">Hint</button>
+        <button onclick="checkGuess()">try Another Guess</button>
+      </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/JS/script.js"></script>
+  </body>
 </html>
