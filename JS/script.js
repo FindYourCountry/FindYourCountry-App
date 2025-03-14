@@ -38,4 +38,8 @@ axios.get(url).then(res=>{
       fetchCountryData(country);
     }
   }
-  
+  document.getElementById("search-box").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") { // Check if Enter key is pressed
+        searchCountry();
+    }
+});
