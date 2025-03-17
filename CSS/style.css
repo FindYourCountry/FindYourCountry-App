@@ -3,6 +3,14 @@ body{
     margin:0;
 
 }
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    width:100vw;
+
+
+}
 header{
     text-align:center;
     font-family:sans-serif;
@@ -14,17 +22,15 @@ header{
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:10px;
-    
-    
+    gap:10px;    
 
 }
 input{
     flex:1;
     border-radius:50px;
     font-size:1rem;
-    padding:10px 50px;
-    width:65%;
+    padding:10px 20px;
+    width:70vw;
     border: 1px solid #ccc;
 
 }
@@ -42,12 +48,40 @@ input{
     justify-content:center;
     flex-direction:column;
     background-color:rgb(255, 255, 255);
-    padding:10px;
     margin:40px;
     border-radius:10px;
     
 
 
+}
+.details{
+    padding:10px 15px;
+    font-size:1.5rem;
+    padding-bottom:20px;
+
+}
+#maps-link{
+    outline-color:transparent;
+    text-decoration: none;
+    background:rgb(226, 233, 236);
+    padding:5px;
+    border-radius:5px;
+    font-weight:bold;
+      
+    
+}
+#maps-link:link{
+    color:rgb(98, 142, 235);
+}
+#maps-link:hover {
+    background: #d0d2d7;
+  }
+
+/* flag control section */
+#country-flag, quiz-flag{
+    width:100%;
+    border-radius:10px;
+    margin:0;
 }
 /* quiz info section */
 .quiz-container{
@@ -56,9 +90,11 @@ input{
     padding:10px;
     margin:1px 40px;
     border-radius:10px;
+    font-size:1.5rem;
     
 
 }
+
 .quiz-buttons{
     display:grid;
     justify-content:center;
@@ -85,7 +121,64 @@ button{
     border-radius:10px;
     padding:5px;
     border:none;
-    font-size:1rem;
+    font-size:1.2rem;
     cursor: pointer;
+
+}
+/* screen width greater than 768px */
+@media (min-width: 768px){
+    
+    .container{
+        
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+
+
+    }
+    input{
+       width:70vw;
+    }
+    #country-info{
+        display:flex;
+        justify-content:center;
+        flex-direction:column;
+    }
+    .details{
+        font-size:1.3rem;
+    }
+    #country-flag, quiz-flag{
+        width:100%;
+        border-radius:10px
+    }
+    .quiz-container{
+        
+        font-size:1.3rem;
+        padding:10px;
+        
+
+    }
+
+}
+/* screen width less then 430 */
+@media (max-width: 430px){
+    .details{
+        font-size:1rem;
+    }
+    #country-info{
+        margin:10px 30px;
+
+    }
+
+    .quiz-container{
+        font-size:1rem;
+        padding:10px 10px;
+        margin:10px 30px;
+    }
+    .quiz-buttons{
+        
+        font-size:0.9rem;
+    }
+   
 
 }
