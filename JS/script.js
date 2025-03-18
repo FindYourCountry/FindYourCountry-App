@@ -36,3 +36,44 @@ function updateCountryInfo(country) {
 
 });
 
+let quizCountry = null;
+
+// Function to get a random country for the quiz
+async function getRandomCountry() {
+  try {
+    const response = await axios.get("https://restcountries.com/v3.1/all");
+    const countries = response.data;
+    quizCountry = countries[Math.floor(Math.random() * countries.length)];
+
+    // Show the flag of the selected country
+    document.getElementById("quiz-flag").src = quizCountry.flags.svg;
+  } catch (error) {
+    console.error("Error fetching countries:", error);
+  }
+}
+
+// Check user's guess
+function checkGuess() {
+  const userGuess = document.getElementById("guess-input").value.trim().toLowerCase();
+  const correctAnswer = quizCountry.name.common.toLowerCase();
+
+  if (userGuess === correctAnswer) {
+    alert("🎉 Correct! You guessed the right country!");
+    getRandomCountry(); // Load a new country after correct guess
+  } else {
+    alert("❌ Incorrect! Try again.");
+  }
+}
+
+// Provide a hint
+function getHint() {
+  alert(`Hint: The country's capital is ${quizCountry.capital?.[0] || "N/A"}`);
+}
+
+// Start the quiz on page load
+getRandomCountry();
+
+function resetGuess() {
+  document.getElementById("guess-input").value = ""; 
+  getRandomCountry();// Clear input field
+}
