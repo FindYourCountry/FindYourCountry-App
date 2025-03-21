@@ -22,17 +22,17 @@ header{
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:10px;    
+    gap:10px;
 
 }
 input{
     flex:1;
     border-radius:50px;
     font-size:1rem;
-    padding:10px 20px;
+    padding: 10px 20px;
     width:70vw;
     border: 1px solid #ccc;
-
+    
 }
 /* search and submit buttons */
 .btn{
@@ -76,16 +76,24 @@ input{
 #maps-link:hover {
     background: #d0d2d7;
   }
+  .fa-solid{
+    color:rgb(77, 140, 217);
+    padding-right:10px;
+    font-size:1.3rem;
+
+  }
 
 /* flag control section */
-#country-flag, quiz-flag{
+#country-flag, #quiz-flag{
     width:100%;
     border-radius:10px;
     margin:0;
 }
 /* quiz info section */
 .quiz-container{
-    align-items:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
     background-color:rgb(255, 255, 255);
     padding:10px;
     margin:1px 40px;
@@ -147,12 +155,11 @@ button{
     .details{
         font-size:1.3rem;
     }
-    #country-flag, quiz-flag{
+    #country-flag, #quiz-flag{
         width:100%;
         border-radius:10px
     }
     .quiz-container{
-        
         font-size:1.3rem;
         padding:10px;
         
